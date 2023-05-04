@@ -68,12 +68,23 @@ svg {
 
 // General styles
 body {
-    display: grid;
-    text-align: center;
-    place-content: center;
+    // display: grid;
+    // place-content: center;
+    padding: 20px;
+    background-color: var(--clr-very-dark-grey);
+    font-family: var(--ff-primary);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include breakpoints-up(medium) {
+    }
 }
 
-h1 {
-    line-height: 0.75;
-    font-size: calc(1em + 5vw);
+.header,
+.container {
+    @include breakpoints-up(medium) {
+        max-width: 450px;
+        width: 100%;
+    }
 }

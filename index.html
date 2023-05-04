@@ -13,13 +13,94 @@
 
         <!-- Links -->
         <link rel="stylesheet" href="apps/style/style.css" />
-        <script
+        <!--  <script
             src="https://kit.fontawesome.com/5b12988027.js"
             crossorigin="anonymous"
-        ></script>
+        ></script> -->
     </head>
     <body>
-        <h1>Coming soon ...</h1>
+        <main class="container">
+            <header class="header">
+                <h2>Password Generator</h2>
+                <form>
+                    <input type="text" placeholder="Pa55w0rd" />
+                    <button>
+                        <img src="assets/images/icon-copy.svg" alt="copy" />
+                    </button>
+                </form>
+            </header>
+            <div class="card">
+                <div class="slider">
+                    <div class="slider__top flex">
+                        <div>
+                            <p>Character Length</p>
+                        </div>
+                        <div class="length">
+                            <p>8</p>
+                        </div>
+                    </div>
+                    <div class="slid-bar">
+                        <input
+                            type="range"
+                            min="0"
+                            max="20"
+                            value="8"
+                            step="4"
+                            class="slider"
+                            id="range"
+                        />
+                    </div>
+                </div>
+
+                <div class="checkboxes">
+                    <div class="check flex">
+                        <div class="check-box-container">
+                            <label for="checkbox1"></label>
+                            <input type="checkbox" id="checkbox1" />
+                        </div>
+                        <p>Include Uppercase Letters</p>
+                    </div>
+                    <div class="check flex">
+                        <div class="check-box-container">
+                            <label for="checkbox2"></label>
+                            <input type="checkbox" id="checkbox2" />
+                        </div>
+                        <p>Include Lowercase Letters</p>
+                    </div>
+                    <div class="check flex">
+                        <div class="check-box-container">
+                            <label for="checkbox3"></label>
+                            <input type="checkbox" id="checkbox3" />
+                        </div>
+                        <p>Include Numbers</p>
+                    </div>
+                    <div class="check flex">
+                        <div class="check-box-container">
+                            <label for="checkbox4"></label>
+                            <input type="checkbox" id="checkbox4" />
+                        </div>
+                        <p>Include Symbols</p>
+                    </div>
+                </div>
+
+                <div class="strength flex">
+                    <p>STRENGTH</p>
+
+                    <div class="bars flex">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                </div>
+
+                <button class="flex">
+                    GENERATE
+                    <img src="assets/images/icon-arrow-right.svg" alt="arrow" />
+                </button>
+            </div>
+        </main>
+
         <script src="apps/js/main.js"></script>
     </body>
 </html>
