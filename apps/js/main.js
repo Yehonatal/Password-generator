@@ -10,18 +10,17 @@ const strength = document.querySelector("#strength");
 const bars = document.querySelector(".bars");
 const tagOne = document.querySelector(".tag-1");
 
-// Define variables
-let password;
-const upperCase = "ABCDEFGHIJKLMNOPQRSTUVXYZ";
-const lowerCase = "abcdefghijklmnopqrstuvxyz";
-const numbers = "0123456789";
-const specialChars = "£$&()*+[]@#^-_!?";
-
 // Add event listeners
 slider.addEventListener("input", updateLength);
 checkboxesContainer.addEventListener("change", updateSelectedTypes);
 generatorBtn.addEventListener("click", generatePassword);
 copyBtn.addEventListener("click", copyPassword);
+
+// Define variables
+const upperCase = "ABCDEFGHIJKLMNOPQRSTUVXYZ";
+const lowerCase = "abcdefghijklmnopqrstuvxyz";
+const numbers = "0123456789";
+const specialChars = "£$&()*+[]@#^-_!?";
 
 // Define functions
 function updateLength(e) {
@@ -39,15 +38,19 @@ function generatePassword() {
         checkboxesContainer.querySelectorAll('input[type="checkbox"]:checked')
     ).map((checkbox) => checkbox.id);
     const length = lengthDisplay.innerText;
-    password = passGenerated.innerText;
-    console.log(selectedTypes, length);
+
+    let l = parseInt(length);
+    let password = "";
+
+    // Get the choices from the types to include boxes
+    // get the length from the slider
+    // get a random choice of type and generate a random character from that list for each space in the given length
 
     getStrength(password);
 }
 
 function getStrength(password) {
     let score = zxcvbn(password).score;
-    console.log(password);
 
     strength.innerText =
         score <= 1
