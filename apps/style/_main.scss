@@ -38,7 +38,7 @@
 }
 
 .container {
-    padding: 15px;
+    // padding: 15px;
     font-weight: bold;
     .card {
         width: 100%;
@@ -54,10 +54,6 @@
         font-style: bold;
     }
 
-    div {
-        padding: 5px;
-    }
-
     .slider {
         &__top {
             justify-content: space-between;
@@ -65,7 +61,7 @@
 
             .length {
                 color: var(--clr-neon-green) !important;
-                font-size: 1.25rem;
+                font-size: 1.75rem;
                 p {
                     color: inherit;
                 }
@@ -73,7 +69,7 @@
         }
 
         .slid-bar {
-            margin-bottom: -20px;
+            margin-top: 10px;
             input {
                 width: 100%;
             }
@@ -83,6 +79,19 @@
         padding: 0px !important;
         p {
             font-size: 1em;
+        }
+
+        .check {
+            padding: 5px 5px 5px 0;
+
+            label {
+                margin-right: 10px;
+                padding: 0;
+                // border: 2px solid var(--clr-neon-green);
+            }
+            p {
+                font-size: 1.05rem;
+            }
         }
     }
 
@@ -96,8 +105,8 @@
         }
     }
 
-    button {
-        padding: 10px;
+    .genBtn {
+        padding: 12px;
         display: flex;
         align-items: center;
         text-align: center;
@@ -106,12 +115,24 @@
         font-weight: bolder;
         font-family: inherit;
         font-size: 1em;
-        border: none;
+        border: 2px solid transparent;
         outline: none;
         background-color: var(--clr-neon-green);
+        transition: all 300ms ease-in-out;
 
         img {
             width: 10px;
+        }
+
+        &:hover,
+        &:active {
+            color: var(--clr-neon-green);
+            border: 2px solid var(--clr-neon-green);
+            background-color: transparent;
+
+            path {
+                fill: var(--clr-neon-green);
+            }
         }
     }
 }
@@ -127,6 +148,10 @@
 
 .bars {
     gap: 5px;
+    padding: 5px 0;
+    p {
+        margin-right: 10px;
+    }
     .bar {
         border: 2px solid white;
         height: 20px;
@@ -153,11 +178,10 @@ button {
 }
 
 .form-control {
-    font-size: 2rem;
+    font-size: 1rem;
     font-weight: bold;
     line-height: 1.1;
     display: grid;
-    scale: 0.45;
 }
 input[type="checkbox"] {
     cursor: pointer;
@@ -167,9 +191,9 @@ input[type="checkbox"] {
     margin: 0;
 
     font: inherit;
-    width: 1.15em;
-    height: 1.15em;
-    border: 5px solid var(--clr-almost-white);
+    width: 1em;
+    height: 1em;
+    border: 3px solid var(--clr-almost-white);
 
     /* ...existing styles */
     display: grid;
@@ -195,7 +219,6 @@ input[type="range"] {
     -webkit-appearance: none;
     background-color: transparent;
     appearance: none;
-    border-radius: 5px;
     cursor: grabbing;
 }
 
@@ -205,7 +228,6 @@ input[type="range"]:focus {
 input[type="range"]::-webkit-slider-runnable-track {
     background: var(--clr-very-dark-grey);
     height: 10px;
-    border-radius: 8px;
     background-color: var(--clr-very-dark-grey);
 }
 
@@ -221,5 +243,62 @@ input[type="range"]::-webkit-slider-thumb {
     border: 2px solid var(--clr-almost-white);
     background: var(--clr-neon-green);
     margin-top: -5px;
-    border-radius: 50%;
+}
+
+.bars.too-weak {
+    .bar:nth-child(2) {
+        background-color: var(--clr-red);
+        border-color: var(--clr-red);
+    }
+}
+.bars.weak {
+    .bar:nth-child(2) {
+        background-color: var(--clr-orange);
+        border-color: var(--clr-orange);
+    }
+    .bar:nth-child(3) {
+        background-color: var(--clr-orange);
+        border-color: var(--clr-orange);
+    }
+}
+.bars.medium {
+    .bar:nth-child(2) {
+        background-color: var(--clr-yellow);
+        border-color: var(--clr-yellow);
+    }
+    .bar:nth-child(3) {
+        background-color: var(--clr-yellow);
+        border-color: var(--clr-yellow);
+    }
+    .bar:nth-child(4) {
+        background-color: var(--clr-yellow);
+        border-color: var(--clr-yellow);
+    }
+}
+.bars.strong {
+    .bar {
+        background-color: var(--clr-neon-green);
+        border-color: var(--clr-neon-green);
+    }
+}
+
+.bars {
+    position: relative;
+    transition: left 3s ease-in-out;
+    .tag {
+        position: absolute;
+        font-size: 1.25em;
+        color: white !important;
+        left: -75px;
+    }
+}
+#copy-btn {
+    position: relative;
+}
+.tag-1 {
+    position: absolute;
+    font-size: 1em !important;
+    color: var(--clr-neon-green) !important;
+    left: -70px;
+    top: 10px;
 }
