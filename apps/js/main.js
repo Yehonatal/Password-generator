@@ -33,20 +33,40 @@ function updateSelectedTypes(e) {
     ).map((checkbox) => checkbox.id);
 }
 
+function option(choice) {
+    return choice == "upperCase"
+        ? upperCase
+        : choice == "lowerCase"
+        ? lowerCase
+        : choice == "numbers"
+        ? numbers
+        : specialChars
+        ? specialChars
+        : numbers;
+}
+
 function generatePassword() {
     const selectedTypes = Array.from(
         checkboxesContainer.querySelectorAll('input[type="checkbox"]:checked')
     ).map((checkbox) => checkbox.id);
     const length = lengthDisplay.innerText;
 
-    let l = parseInt(length);
     let password = "";
 
-    // Get the choices from the types to include boxes
-    // get the length from the slider
-    // get a random choice of type and generate a random character from that list for each space in the given length
+    for (let i = 0; i < length; i++) {
+        const choice =
+            selectedTypes[Math.floor(Math.random() * selectedTypes.length)];
+        const passwordOption = option(choice);
 
-    getStrength(password);
+        const char =
+            passwordOption[Math.floor(Math.random() * passwordOption.length)];
+        password += char;
+    }
+
+    if (selectedTypes.length > 0) {
+        passGenerated.innerText = password;
+        getStrength(password);
+    }
 }
 
 function getStrength(password) {

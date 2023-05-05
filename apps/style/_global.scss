@@ -83,8 +83,9 @@ body {
 
 .header,
 .container {
+    width: 100%;
     @include breakpoints-up(medium) {
-        max-width: 450px;
+        max-width: 550px;
         width: 100%;
     }
 }
