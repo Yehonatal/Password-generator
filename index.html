@@ -22,12 +22,12 @@
         <main class="container">
             <header class="header">
                 <h2>Password Generator</h2>
-                <form>
-                    <input type="text" placeholder="Pa55w0rd" />
-                    <button>
+                <div class="output" id="output">
+                    <p class="pass-generated">P455w0rd</p>
+                    <button id="copy-btn">
                         <img src="assets/images/icon-copy.svg" alt="copy" />
                     </button>
-                </form>
+                </div>
             </header>
             <div class="card">
                 <div class="slider">
@@ -42,8 +42,8 @@
                     <div class="slid-bar">
                         <input
                             type="range"
-                            min="0"
-                            max="20"
+                            min="4"
+                            max="24"
                             value="8"
                             step="4"
                             class="slider"
@@ -55,25 +55,39 @@
                 <div class="checkboxes">
                     <div class="check flex">
                         <label class="form-control">
-                            <input checked type="checkbox" name="checkbox" />
+                            <input
+                                id="upper"
+                                checked
+                                type="checkbox"
+                                name="checkbox"
+                            />
                         </label>
                         <p>Include Uppercase Letters</p>
                     </div>
                     <div class="check flex">
                         <label class="form-control">
-                            <input checked type="checkbox" name="checkbox" />
+                            <input
+                                id="lower"
+                                checked
+                                type="checkbox"
+                                name="checkbox"
+                            />
                         </label>
                         <p>Include Lowercase Letters</p>
                     </div>
                     <div class="check flex">
                         <label class="form-control">
-                            <input type="checkbox" name="checkbox" />
+                            <input id="num" type="checkbox" name="checkbox" />
                         </label>
                         <p>Include Numbers</p>
                     </div>
                     <div class="check flex">
                         <label class="form-control">
-                            <input type="checkbox" name="checkbox" />
+                            <input
+                                id="symbols"
+                                type="checkbox"
+                                name="checkbox"
+                            />
                         </label>
                         <p>Include Symbols</p>
                     </div>
@@ -90,7 +104,7 @@
                     </div>
                 </div>
 
-                <button class="flex">
+                <button id="generator" class="flex">
                     GENERATE
                     <img src="assets/images/icon-arrow-right.svg" alt="arrow" />
                 </button>
