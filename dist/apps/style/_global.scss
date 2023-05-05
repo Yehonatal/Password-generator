@@ -68,11 +68,14 @@ svg {
 
 // General styles
 body {
+    // display: grid;
+    // place-content: center;
     padding: 20px;
     background-color: var(--clr-very-dark-grey);
     font-family: var(--ff-primary);
 
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     @include breakpoints-up(medium) {
